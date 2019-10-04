@@ -1,0 +1,65 @@
+{
+	"name": "my-machine-friendly-id",
+	"label": "my-human-readable-name",
+	"description": "This Gear Is designed to test the manifest overwrite bug!",
+	"version": "0",
+	"inputs": {
+		"api-key": {
+			"base": "api-key"
+		},
+		"bin": {
+			"base": "file",
+			"description": "complementary .bin associated with the .msot file.",
+			"type": {
+				"enum": [
+					".bin"
+				]
+			}
+		},
+		"msot": {
+			"base": "file",
+			"description": ".msot file for conversion.",
+			"type": {
+				"enum": [
+					".msot"
+				]
+			}
+		}
+	},
+	"config": {
+		"gear-log-level": {
+			"default": "INFO",
+			"description": "Gear Log verbosity level (ERROR|WARNING|INFO|DEBUG)",
+			"enum": [
+				"ERROR",
+				"WARNING",
+				"INFO",
+				"DEBUG"
+			],
+			"type": "string"
+		}
+	},
+	"environment": {
+		"FLYWHEEL": "/flywheel/v0",
+		"GPG_KEY": "C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF",
+		"LANG": "C.UTF-8",
+		"PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+		"PYTHONIOENCODING": "UTF-8",
+		"PYTHON_PIP_VERSION": "19.1.1",
+		"PYTHON_VERSION": "2.7.16",
+		"SCITRAN_PERSISTENT_DATA_PATH": "/var/scitran/data"
+	},
+	"command": "./run",
+	"author": "David Parker",
+	"maintainer": "David Parker",
+	"cite": "Here are my citations",
+	"license": "My Special License",
+	"source": "My Special Source",
+	"url": "My Special URL",
+	"custom": {
+		"gear-builder": {
+			"category": "converter",
+			"image": "dbp2123/manifest-bug:1.0"
+		}
+	}
+}

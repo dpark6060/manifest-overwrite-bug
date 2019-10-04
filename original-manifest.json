@@ -1,0 +1,66 @@
+{
+	"name": "manifest-bug",
+	"label": "Test Manifest Bug",
+	"description": "This Gear Is designed to test the manifest overwrite bug!",
+	"version": "3.1.4",
+	"inputs": {
+		"api-key": {
+			"base": "api-key"
+		},
+		"msot": {
+			"base": "file",
+			"description": ".msot file for conversion.",
+			"type": {
+				"enum": [
+					".msot"
+				]
+			}
+		},
+		"bin": {
+			"base": "file",
+			"description": "complementary .bin associated with the .msot file.",
+			"type": {
+				"enum": [
+					".bin"
+				]
+			}
+		}
+	},
+	"config": {
+		"gear-log-level": {
+      	"default": "INFO",
+      	"description": "Gear Log verbosity level (ERROR|WARNING|INFO|DEBUG)",
+      	"type": "string",
+                        "enum": [
+                                "ERROR",
+                                "WARNING",
+                                "INFO",
+                                "DEBUG"
+                        		]
+    	}
+	},
+
+	"environment": {
+		"FLYWHEEL": "/flywheel/v0",
+		"PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+	},
+	"command": "./run",
+	"author": "David Parker",
+	"maintainer": "David Parker",
+	"cite": "Here are my citations",
+	"license": "My Special License",
+	"source": "My Special Source",
+	"url": "My Special URL",
+	"custom": {
+		"gear-builder": {
+			"category": "converter",
+			"image": "dbp2123/manifest-bug:1.0"
+		},
+		"flywheel": {
+			"suite": "My Special Suite"
+      },
+      "my-custom-field":{
+      	"custom-algorithm-info":"Important information on the algorithm being used"
+      }
+	}
+}
